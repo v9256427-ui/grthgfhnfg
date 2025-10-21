@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ООО "Товары и услуги" — Главная</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+       
+        <strong>Товары<span>и</span>Услуги</strong>
+      </a>
+
+      <nav class="main-nav" aria-label="Главная навигация">
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Каталог</a></li>
+          <li><a href="#">О компании</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-label="Открыть меню">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Качественные товары и услуги для вашего бизнеса</h1>
+          <p>Современные решения, быстрая доставка и индивидуальный подход. Ознакомьтесь с нашим каталогом.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#catalog">Смотреть каталог</a>
+            <a class="btn btn-outline" href="#contacts">Связаться с нами</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <img src="https://via.placeholder.com/420x280?text=Mockup" alt="">
+        </div>
+      </div>
+    </section>
+
+  
+    <section class="about container" id="about">
+      <h2>О компании</h2>
+      <p class="muted">ООО "Товары и услуги" — старейшая и известнейшая компания в регионе. Мы предлагаем товары и услуги с высоким качеством и сервисом.</p>
+
+      <div class="company-data">
+        <ul>
+          <li><strong>Сфера:</strong> Розничная торговля / услуги</li>
+          <li><strong>Логотип:</strong> предоставлен</li>
+          <li><strong>Описание:</strong> Краткое описание компании и ценности</li>
+        </ul>
+      </div>
+    </section>
+
+   
+    <section class="catalog container" id="catalog">
+      <div class="catalog-header">
+        <h2>Каталог товаров и услуг</h2>
+        <p class="muted">Выберите категорию или просмотрите популярные позиции</p>
+      </div>
+
+      <div class="catalog-controls">
+        <label class="select-wrap">
+          <select aria-label="Фильтр категории">
+            <option>Все</option>
+            <option>Товары</option>
+            <option>Услуги</option>
+          </select>
+        </label>
+        <input class="search" type="search" placeholder="Поиск по каталогу" aria-label="Поиск по каталогу">
+      </div>
+
+      <div class="product-grid" role="list">
+      
+        <article class="product-card" role="listitem">
+          <div class="product-thumb">
+            <img src="product01.png" alt="Товар 1">
+          </div>
+          <div class="product-body">
+            <h3>Товар 1</h3>
+            <p class="product-desc">Краткое описание товара: особенности, материал, назначение.</p>
+            <div class="product-meta">
+              <span class="price">₸ 99000</span>
+              <a class="btn btn-small" href="#">Подробнее</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" role="listitem">
+          <div class="product-thumb">
+            <img src="product02.png" alt="Товар 2">
+          </div>
+          <div class="product-body">
+            <h3>Услуга 1</h3>
+            <p class="product-desc">Краткое описание услуги: что входит, время выполнения.</p>
+            <div class="product-meta">
+              <span class="price">от ₸ 8000</span>
+              <a class="btn btn-small" href="#">Подробнее</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" role="listitem">
+          <div class="product-thumb">
+            <img src="product03.png" alt="Товар 3">
+          </div>
+          <div class="product-body">
+            <h3>Товар 3</h3>
+            <p class="product-desc">Краткое описание товара: преимущества и фотo.</p>
+            <div class="product-meta">
+              <span class="price">₸ 93000</span>
+              <a class="btn btn-small" href="#">Подробнее</a>
+            </div>
+          </div>
+        </article>
+
+        
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-inner">
+      <div class="footer-about">
+        <h4>ООО "Товары и услуги"</h4>
+        <p class="muted">Адрес: г. —, ул. —, Телефон: +7 778 567 78 89</p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Навигация</h5>
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Каталог</a></li>
+          <li><a href="#">О компании</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contacts">
+        <h5>Связаться</h5>
+        <p>email@example.com</p>
+        <p>Работаем: Пн–Пт 9:00–18:00</p>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> ООО "Товары и услуги". Все права защищены.</div>
+  </footer>
+
+  <script>
+   
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.main-nav');
+      btn.addEventListener('click', function(){
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+
+      // текущий год в футере
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

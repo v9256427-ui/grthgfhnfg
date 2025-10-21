@@ -1,0 +1,266 @@
+body {
+    background-color: #1a1f2b;
+    color: hwb(0 100% 0%);
+    font-family: Arial,  sans-serif;
+    margin: 0;
+    padding: 0;
+}
+:root{
+  --bg: hwb(214 36% 38%);
+  --text: #1f2937;
+  --muted: hwb(0 0% 100%);
+  --brand: #ffffff;        /* синий корпоративный цвет */
+  --brand-soft: hsl(0, 0%, 100%);
+  --card-bg: hsl(210, 54%, 42%);
+  --radius: 12px;
+  --container-width: 1100px;
+  --max-mobile-width: 420px;
+  --gap: 18px;
+  --shadow: 0 6px 18px rgba(16,24,40,0.06);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+}
+*,
+*::before,*::after{box-sizing: inherit;}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:15px;
+}
+/* контейнер */
+.container{
+  width: calc(100% - 40px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+/* ---------- Хедер ---------- */
+.site-header{
+  border-bottom: 1px solid #eee;
+  background: hsl(214, 38%, 46%);
+  position: sticky;
+  top:0;
+  z-index: 40;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:space-between;
+}
+.logo strong{
+  font-size:18px;
+  color:var(--brand);
+}
+.logo strong span{ color:var(--text); margin-left:4px; font-weight:600; }
+
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:14px;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.main-nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:8px;
+  display:inline-block;
+  font-weight:500;
+}
+.main-nav a:hover{ background:var(--brand-soft); color:var(--brand); }
+
+.menu-toggle{
+  display:none;
+  background:transparent;
+  border:1px solid transparent;
+  padding:6px 8px;
+  font-size:18px;
+  border-radius:8px;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:36px 0;
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+}
+.hero-inner{
+  display:flex;
+  gap:24px;
+  align-items:center;
+  justify-content:space-between;
+}
+.hero-text{ max-width: 560px; }
+.hero h1{
+  margin:0 0 12px;
+  font-size:28px;
+  line-height:1.12;
+  color:var(--text);
+}
+.hero p{ margin:0 0 18px; color:var(--muted); }
+
+.hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; }
+.btn{
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:600;
+  border: 1px solid transparent;
+}
+.btn-primary{
+  background:var(--brand);
+  color:#fff;
+}
+.btn-outline{
+  background:transparent;
+  border:1px solid var(--brand);
+  color:var(--brand);
+}
+.btn-small{
+  padding:8px 10px;
+  font-size:14px;
+}
+
+/* ---------- About ---------- */
+.about h2{ margin-top:0; }
+.muted{ color:var(--muted); }
+
+/* ---------- Catalog ---------- */
+.catalog-header{ margin-bottom:12px; }
+.catalog-controls{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:18px;
+}
+.select-wrap select{
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid #e6e6e6;
+  background:#fff;
+}
+.search{
+  flex:1;
+  min-width:180px;
+  padding:9px 12px;
+  border-radius:10px;
+  border:1px solid #e6e6e6;
+}
+
+/* Сетка карточек */
+.product-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:18px;
+}
+
+/* карточка продукта */
+.product-card{
+  background:var(--card-bg);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.product-thumb img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+.product-body{
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  flex:1;
+}
+.product-body h3{ margin:0; font-size:16px; }
+.product-desc{ margin:0; color:var(--muted); font-size:14px; }
+.product-meta{
+  margin-top:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  margin-top:36px;
+  border-top:1px solid #eee;
+  background:#fff;
+  padding-top:12px;
+}
+.footer-inner{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.footer-links ul, .footer-links li{ margin:0; padding:0; list-style:none; }
+.footer-links a{ color:var(--text); text-decoration:none; }
+.footer-contacts p{ margin:6px 0; color:var(--muted); font-size:14px; }
+.site-footer .copyright{
+  text-align:center;
+  padding:12px 20px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ---------- Мобильная адаптация (целевая 320x480) ---------- */
+@media (max-width: 880px){
+  .hero-inner{ flex-direction:column-reverse; text-align:center; }
+  .hero-image img{ max-width:320px; width:100%; height:auto; }
+  .product-grid{ grid-template-columns: repeat(2, 1fr); }
+  .header-inner{ align-items:center; }
+}
+
+/* мобильная навигация */
+@media (max-width: 640px){
+  .main-nav{ position: absolute; right: 12px; top:64px; background:#fff; border-radius:10px; box-shadow: var(--shadow); overflow:hidden; transform-origin: top right; display:none; }
+  .main-nav.open{ display:block; }
+  .main-nav ul{ flex-direction:column; padding:8px; gap:0; }
+  .main-nav a{ display:block; padding:12px 18px; border-bottom:1px solid #f1f1f1; }
+  .menu-toggle{ display:inline-block; }
+  .product-grid{ grid-template-columns: 1fr; }
+  .container{ padding-left:14px; padding-right:14px; }
+  .hero h1{ font-size:20px; }
+  .hero p{ font-size:14px; }
+}
+
+/* специальная тонкая оптимизация для экрана 320px */
+@media (max-width: 360px){
+  :root{ --gap: 12px; --radius:10px; }
+  .hero h1{ font-size:18px; }
+  .product-thumb img{ height:160px; }
+}
+
+.product-card  {
+  border: 2px solid #888;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2 ease, box-shadow 0.2 ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
